@@ -45,7 +45,7 @@ var genThroughStreamCounter = function () {
 /* Transcodes a wav input stream from 41k to 16k, streaming out a 16k wav file
 to outputPipe. Optionally pass useThrough = true to insert a through stream
 between the wavInputStream and the SoxCommand to count and print the bytes of data */
-var transcodeWavStream = function (wavInputStream, outputSampleRate, outputPipe, useThrough, inputSampleRate) {
+var transcodeWavStream = function (wavInputStream, outputSampleRate, outputPipe, useThrough) {
   useThrough = useThrough || false;
   var inputStream = wavInputStream;
 
@@ -57,9 +57,7 @@ var transcodeWavStream = function (wavInputStream, outputSampleRate, outputPipe,
 
   var command = SoxCommand();
   command.input(inputStream)
-    .inputSampleRate(inputSampleRate)
     .inputEncoding('signed')
-    .inputBits(16)
     .inputChannels(1)
     .inputFileType('wav')
     .output(outputPipe)
@@ -71,7 +69,7 @@ var transcodeWavStream = function (wavInputStream, outputSampleRate, outputPipe,
 };
 
 // Load a wav file buffer as a WaveFile object
-var wavInputStream = fs.createReadStream('source.wav');
-var outputFileStream = fs.createWriteStream('out.wav');
+var wavInputStream = fs.createReadStream('example_audio/source4.wav');
+var outputFileStream = fs.createWriteStream('example_audio/out.wav');
 
-transcodeWavStream(wavInputStream, 16000, outputFileStream, 8000);
+transcodeWavStream(wavInputStream, 8000, outputFileStream);

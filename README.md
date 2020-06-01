@@ -1,4 +1,4 @@
-### Transcode Wav Stream using sox command line + node + 
+### Example transcode Wav Stream using sox command line + node
 
 In the example in `index.js` transcode a `wav` file from stereo to mono.
 

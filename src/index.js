@@ -3,17 +3,29 @@ const musicMetadata = require('music-metadata');
 const transcodeStream = require('./Modules/TranscodeStream');
 const getInputAudioFormat = require('./Modules/getInputAudioFormat');
 
-// Load a wav file buffer as a WaveFile object
-const inputFilePath = './src/example_audio/source2.mp3';
-let wavInputStream = fs.createReadStream(inputFilePath);
-let outputFileStream = fs.createWriteStream('./src/example_audio/out_audio/out.wav');
-const outputFileType = 'wav';
+/**
+ * Transcode any audio file in wav (by default)
+ * 
+ * @param {*} inputFilePath: path of input audio ./src/example_audio/source6.flac
+ * @param {*} outputFilePath: path of output audio ./src/example_audio/out_audio/out.wav
+ * @param {*} outputFileType: by default 'wav'
+ * @param {*} outputSampleRate Set the sample rate in Hz (or kHz if appended with a 'k')
+ * @param {*} outputChannels by default in 1 (mono)
+ */
+function wavefly(inputFilePath, outputFilePath, outputFileType = 'wav', outputSampleRate = 8000, outputChannels = 1 ){
+  // Load a wav file buffer as a WaveFile object
 
-musicMetadata.parseFile(inputFilePath)
-  .then(metadata => {
-    let inputFileType = getInputAudioFormat(metadata.format.container);
-    transcodeStream(wavInputStream, inputFileType, 8000, 1, outputFileStream, outputFileType);
-  })
-  .catch(err => {
-    console.error(err.message);
-  });
+  let wavInputStream = fs.createReadStream(inputFilePath);
+  outputFileStream = fs.createWriteStream(outputFilePath);
+
+  musicMetadata.parseFile(inputFilePath)
+    .then(metadata => {
+      let inputFileType = getInputAudioFormat(metadata.format.container);
+      transcodeStream(wavInputStream, inputFileType, outputSampleRate, outputChannels, outputFileStream, outputFileType);
+    })
+    .catch(err => {
+      console.error(err.message);
+    });
+}
+
+module.exports = wavefly;

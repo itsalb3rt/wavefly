@@ -7,9 +7,11 @@ const getInputAudioFormat = (container) => {
     const formats = [
         { type: 'WAVE', value: 'wav' },
         { type: 'MPEG', value: 'mp3' },
+        { type: 'Ogg', value: 'ogg' },
+        { type: 'FLAC', value: 'flac' },
     ]
     let result = formats.find(format => format.type === container);
-    return result.value;
+    return (result) ? result.value: container.toString().toLowerCase();
 }
 
 module.exports = getInputAudioFormat;

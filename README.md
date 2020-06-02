@@ -17,7 +17,13 @@ $ sudo apt install sox
 $ sudo apt install libsox-fmt-all
 ```
 
-**Basic use**
+### Basic use
+
+```bash
+$ npm i @itsalb3rt/wavefly
+```
+
+**Example**
 
 ```javascript
 const wavefly = require('@itsalb3rt/wavefly');

@@ -6,8 +6,8 @@ Transcode any audio file to wav with minimal effort. This library is an abstract
 
 Use;
 
-[music-metadata](https://github.com/borewit/music-metadata#readme)
-[sox-audio](https://github.com/psaylor/sox-audio)
+* [music-metadata](https://github.com/borewit/music-metadata#readme)
+* [sox-audio](https://github.com/psaylor/sox-audio)
 
 ### Get started
 

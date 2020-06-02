@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Using sox, audio metadata for transcode any audio file to wav",
   "main": "index.js",
+  "repository": "itsalb3rt/wavefly",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

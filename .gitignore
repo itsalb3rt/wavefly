@@ -1,2 +1,2 @@
 node_modules/
-example_audio/out_audio/*.wav
+src/example_audio/out_audio/*.wav

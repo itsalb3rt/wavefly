@@ -7,6 +7,8 @@ In the example in `index.js` transcode a `wav` file from stereo to mono.
 ```bash
 $ sudo apt update
 $ sudo apt install sox
+# support all formats like mp3
+$ sudo apt install libsox-fmt-all
 ```
 
 **Install dependencies**

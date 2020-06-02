@@ -1,7 +1,7 @@
 {
-  "name": "sox-test",
+  "name": "@itsalb3rt/from-any-type-to-wav",
   "version": "1.0.0",
-  "description": "",
+  "description": "Using sox, audio metadata for transcode any audio file to wav",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

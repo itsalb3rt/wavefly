@@ -1,5 +1,5 @@
 {
-  "name": "@itsalb3rt/from-any-type-to-wav",
+  "name": "@itsalb3rt/wavefly",
   "version": "1.0.0",
   "description": "Using sox, audio metadata for transcode any audio file to wav",
   "main": "index.js",

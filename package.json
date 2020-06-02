@@ -1,6 +1,6 @@
 {
   "name": "@itsalb3rt/wavefly",
-  "version": "1.1.0",
+  "version": "1.1.3",
   "description": "Using sox, audio metadata for transcode any audio file to wav",
   "main": "src/index.js",
   "repository": "itsalb3rt/wavefly",

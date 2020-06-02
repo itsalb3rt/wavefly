@@ -13,8 +13,5 @@
     "music-metadata": "^6.4.0",
     "sox": "^0.1.0",
     "sox-audio": "^0.3.0"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   }
 }

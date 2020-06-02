@@ -1,6 +1,13 @@
-### Wavefly
+# Wavefly
 
-Transcode 
+<div style="text-align:center">
+<a href="https://github.com/itsalb3rt/wavefly">
+<img src="https://img.shields.io/github/stars/itsalb3rt/wavefly"/>
+</a>
+<a href="https://github.com/itsalb3rt/wavefly">
+<img src="https://img.shields.io/github/license/itsalb3rt/wavefly"/>
+</a>
+</div>
 
 Transcode any audio file to wav with minimal effort. This library is an abstraction to facilitate the use of sox with node.
 

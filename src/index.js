@@ -12,19 +12,19 @@ const getInputAudioFormat = require('./Modules/getInputAudioFormat');
  * @param {*} outputSampleRate Set the sample rate in Hz (or kHz if appended with a 'k')
  * @param {*} outputChannels by default in 1 (mono)
  */
-function wavefly(inputFilePath, outputFilePath, outputFileType = 'wav', outputSampleRate = 8000, outputChannels = 1 ){
+function wavefly(inputFilePath, outputFilePath, outputFileType = 'wav', outputSampleRate = 8000, outputChannels = 1) {
   // Load a wav file buffer as a WaveFile object
 
   let wavInputStream = fs.createReadStream(inputFilePath);
   outputFileStream = fs.createWriteStream(outputFilePath);
 
-  musicMetadata.parseFile(inputFilePath)
+  return musicMetadata.parseFile(inputFilePath)
     .then(metadata => {
       let inputFileType = getInputAudioFormat(metadata.format.container);
-      transcodeStream(wavInputStream, inputFileType, outputSampleRate, outputChannels, outputFileStream, outputFileType);
+      return transcodeStream(wavInputStream, inputFileType, outputSampleRate, outputChannels, outputFileStream, outputFileType);
     })
     .catch(err => {
-      console.error(err.message);
+      console.log('wavefly -> err', err)
     });
 }
 

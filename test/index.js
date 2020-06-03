@@ -1,7 +1,16 @@
 const wavefly = require('../src/index');
 
 // test
-const inputFilePath = './test/example_audio/source6.flac';
-const outputFilePath = './test/example_audio/out_audio/out.wav';
+const inputFilePath = './example_audio/source5.ogg';
+const outputFilePath = './example_audio/out_audio/out.wav';
 
-wavefly(inputFilePath, outputFilePath);
+const result = wavefly(inputFilePath, outputFilePath);
+
+result.then(response => {
+    console.log('promisse resolved')
+
+    response.on('end', () => {
+        console.log('Audio transcoding!')
+    })
+
+})

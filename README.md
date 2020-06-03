@@ -51,6 +51,35 @@ result.then(response => {
 })
 ```
 
+**Wait for file transcode using promises**
+
+```javascript
+const wavefly = require('@itsalb3rt/wavefly');
+
+const inputFilePath = './example_audio/source6.flac';
+const outputFilePath = './example_audio/out_audio/out.wav';
+
+const result = wavefly(inputFilePath, outputFilePath);
+
+const audioTranscode = result.then(response=>{
+    return new Promise((resolve) => {
+        response.on('end', () => resolve(true));
+        response.on('error', () => resolve(false));
+    });
+}).catch(error => {
+    console.log(error)
+})
+
+// ...
+
+audioTranscode
+.then(response=>{
+    //Watever you want do here after file processing
+}).catch(error => {
+    console.log(error)
+})
+```
+
 :warning: Note that the promise resolution does not indicate that the file has already been processed, for this you must use the `response`, an event called `end`
 
 **More options**

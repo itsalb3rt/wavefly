@@ -39,8 +39,19 @@ const wavefly = require('@itsalb3rt/wavefly');
 const inputFilePath = './example_audio/source6.flac';
 const outputFilePath = './example_audio/out_audio/out.wav';
 
-wavefly(inputFilePath, outputFilePath);
+const result = wavefly(inputFilePath, outputFilePath);
+
+result.then(response => {
+    console.log('promisse resolved')
+
+    response.on('end', () => {
+        console.log('Audio transcoding!')
+    })
+
+})
 ```
+
+:warning: Note that the promise resolution does not indicate that the file has already been processed, for this you must use the `response`, an event called `end`
 
 **More options**
 

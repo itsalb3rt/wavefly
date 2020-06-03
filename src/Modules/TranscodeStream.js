@@ -18,6 +18,7 @@ const transcodeStream = function (wavInputStream, inputFileType, outputSampleRat
 
     addStandardListeners(command);
     command.run();
+    return command;
 };
 
 module.exports = transcodeStream;

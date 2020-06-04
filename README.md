@@ -24,6 +24,16 @@ $ sudo apt install sox
 $ sudo apt install libsox-fmt-all
 ```
 
+**Alpine**
+
+Test with docker `node:10.21.0-alpine3.11` 
+
+```bash
+$ apk update 
+$ apk add sox
+```
+
+
 ### Basic use
 
 ```bash

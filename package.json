@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "music-metadata": "^8.1.4",
+    "music-metadata": "^11.12.3",
     "sox": "^0.1.0",
     "sox-audio": "^0.3.0"
   }
